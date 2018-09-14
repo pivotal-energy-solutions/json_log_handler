@@ -12,6 +12,10 @@ try:
 except ImportError:
     from io import StringIO
 
+try:
+    str = unicode
+except NameError:
+    pass
 
 log_buffer = StringIO()
 stringio_handler = logging.StreamHandler(log_buffer)
